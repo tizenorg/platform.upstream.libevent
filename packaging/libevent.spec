@@ -5,7 +5,7 @@ Summary:        Library Providing an Event Handling API
 License:        BSD-3-Clause
 Group:          Development/Libraries/C and C++
 Url:            http://monkey.org/~provos/libevent/
-Source0:        http://monkey.org/~provos/libevent-%{version}-stable.tar.bz2
+Source0:        http://monkey.org/~provos/libevent-%{version}-stable.tar.gz
 Source1:        baselibs.conf 
 BuildRequires:  pkgconfig
 
