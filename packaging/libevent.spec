@@ -7,6 +7,7 @@ Group:          Development/Libraries/C and C++
 Url:            http://monkey.org/~provos/libevent/
 Source0:        http://monkey.org/~provos/libevent-%{version}-stable.tar.gz
 Source1:        baselibs.conf 
+Source1001: 	libevent.manifest
 BuildRequires:  pkgconfig
 
 %description
@@ -31,6 +32,7 @@ This package holds the development files for libevent2.
 
 %prep
 %setup -q  -n %{name}-%{version}-stable
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-static
@@ -44,6 +46,7 @@ This package holds the development files for libevent2.
 %postun -p /sbin/ldconfig
 
 %files 
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_libdir}/%{name}-2.0.so.5*
 %{_libdir}/%{name}_core-2.0.so.5*
@@ -51,6 +54,7 @@ This package holds the development files for libevent2.
 %{_libdir}/%{name}_pthreads-2.0.so.5*
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_bindir}/event_rpcgen.py
 %{_includedir}/*.h
